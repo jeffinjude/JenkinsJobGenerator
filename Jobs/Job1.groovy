@@ -10,7 +10,7 @@ job(jobName) {
 	scm {
         	git {
 			remote {
-				github('jeffinjude/ObjectsRepo.git')
+				github('jeffinjude/ObjectsRepo')
 			}
 			configure { scmNode ->
 				scmNode / gitTool('ubuntu-slave-git')
