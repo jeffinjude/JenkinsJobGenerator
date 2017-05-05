@@ -1,19 +1,24 @@
 def jobName = 'GeneratedJob1'
-def gitUrl = 'https://github.com/jeffinjude/ObjectsRepo.git'
+def gitOwner_RepoName= 'jeffinjude/ObjectsRepo' /*Provide this in the format: owner/repositoryname */
 def branchName = 'master'
+def jenkinsExecutionNode = 'ubuntu-slave-node'
+def gitExecutable = 'ubuntu-slave-git'
+
 job(jobName) {
-	label('ubuntu-slave-node')
+	label(jenkinsExecutionNode)
 	
 	parameters {
 		stringParam('MESSAGE', 'Hello world!') 
 	}
+	
 	scm {
         	git {
 			remote {
-				github('jeffinjude/ObjectsRepo')
+				github(gitOwner_RepoName)
 			}
+			branch(branchName)
 			configure { scmNode ->
-				scmNode / gitTool('ubuntu-slave-git')
+				scmNode / gitTool(gitExecutable)
 			}
 		}
 	}
