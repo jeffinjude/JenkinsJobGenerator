@@ -7,7 +7,7 @@ pipelineJob(jobName) {
     definition {
         cps {
             sandbox()
-            script("
+            script("""
                 node {
                     stage 'Stage 1'
                     echo 'Entering stage 1'
@@ -17,7 +17,7 @@ pipelineJob(jobName) {
                     echo 'Entering stage 3'
                     
                 }
-            ".stripIndent())
+            """.stripIndent())
         }
     }
 }
