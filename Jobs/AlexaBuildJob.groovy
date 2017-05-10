@@ -9,18 +9,12 @@ job(jobName) {
 	label(jenkinsExecutionNode)
 	
 	scm {
+        	git(gitUrl, branchName)
         	git {
-				configure { scmNode ->
-					scmNode / userRemoteConfigs / hudson.plugins.git.UserRemoteConfig / url(gitUrl)
-				}
-				configure { scmNode ->
-					scmNode / userRemoteConfigs / hudson.plugins.git.UserRemoteConfig / credentialsId(gitCredentials)
-				}
-				branch(branchName)
-				configure { scmNode ->
-					scmNode / gitTool(gitExecutable)
-				}
+			configure { scmNode ->
+				scmNode / gitTool(gitExecutable)
 			}
+		}
 	}
 	
 }
