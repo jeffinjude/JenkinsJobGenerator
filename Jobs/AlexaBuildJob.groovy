@@ -10,10 +10,8 @@ job(jobName) {
 	
 	scm {
         	git(gitUrl, branchName)
-        	git {
-			configure { scmNode ->
-				scmNode / gitTool(gitExecutable)
-			}
+		configure { scmNode ->
+			scmNode / gitTool(gitExecutable)
 		}
 	}
 	
