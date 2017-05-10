@@ -21,7 +21,7 @@ job(jobName) {
 	}
 	
 	steps {
-		maven('clean package')
+		maven('clean package','alexa-master/pom.xml')
 	}
 	
 	publishers {
