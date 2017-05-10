@@ -24,4 +24,8 @@ job(jobName) {
 		maven('clean package')
 	}
 	
+	publishers {
+        	archiveArtifacts('**/target/*.jar')
+    	}
+	
 }
