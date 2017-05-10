@@ -12,6 +12,7 @@ job(jobName) {
 		git {
 			remote {
 				url(gitUrl)
+				credentials(gitCredentials)
 			}
 			branch(branchName)
 			configure { scmNode ->
