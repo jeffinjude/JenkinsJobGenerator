@@ -28,4 +28,8 @@ job(jobName) {
         	archiveArtifacts('**/target/*.jar')
     	}
 	
+	publishers {
+		archiveJunit('**/target/surefire-reports/*.xml')
+	}
+	
 }
