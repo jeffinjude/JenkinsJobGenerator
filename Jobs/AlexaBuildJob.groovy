@@ -11,7 +11,7 @@ job(jobName) {
 	scm {
 		git {
 			remote {
-				github(gitOwner_RepoName)
+				github(gitUrl)
 			}
 			branch(branchName)
 			configure { scmNode ->
