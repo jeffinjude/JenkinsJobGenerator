@@ -9,10 +9,14 @@ job(jobName) {
 	label(jenkinsExecutionNode)
 	
 	scm {
-        	git(gitUrl, branchName)
-		configure { scmNode ->
-			scmNode / gitTool(gitExecutable)
-		}
+		git {
+			remote {
+				github(gitOwner_RepoName)
+			}
+			branch(branchName)
+			configure { scmNode ->
+				scmNode / gitTool(gitExecutable)}
+		}       	
 	}
 	
 }
