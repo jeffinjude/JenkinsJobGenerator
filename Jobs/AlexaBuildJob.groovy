@@ -20,4 +20,8 @@ job(jobName) {
 		}       	
 	}
 	
+	steps {
+		maven('clean package')
+	}
+	
 }
